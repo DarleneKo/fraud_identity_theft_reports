@@ -33,18 +33,22 @@ d3.csv('/resources/fraud_reports.csv').then(function (data1) {
 
             // Grab values from the data json object by matching on State to build the Factual Information
             var stateInfo = data1.filter(info => info.State == state)
+            var totalReports = stateInfo.map(info => +info.ReportNumber);
             var totalLoss = stateInfo.map(info => +info.TotalLoss);
             var medianLoss = stateInfo.map(info => +info.MedianLoss);
 
+            totalReports = totalReports ? totalReports[0]: 0;
             totalLoss =  totalLoss ? totalLoss[0]: 0;
             medianLoss =  medianLoss ? medianLoss[0]: 0;
 
+            console.log("total reports", totalReports);
             console.log("total loss", totalLoss);
             console.log("median loss", medianLoss)
 
             fraudInfo = {
-                "Total Loss" : totalLoss,
-                "Median Loss" : medianLoss
+                "Total Fraud Reports: " : totalReports,
+                "Total Loss: $" : totalLoss,
+                "Median Loss: $" : medianLoss
             };
 
             // Select Information Panel to a div tag with id "facts" from HTML file to place data
@@ -55,7 +59,7 @@ d3.csv('/resources/fraud_reports.csv').then(function (data1) {
   
             // Extract the key and value pair after looping through each State and Appending to the Information Panel
             Object.entries(fraudInfo).forEach(([key, value]) => {   
-                factualInfo.append("h6").text(`${key}: $${value}`);    
+                factualInfo.append("h6").text(`${key}${value}`);    
             });
         }
         
