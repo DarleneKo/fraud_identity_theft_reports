@@ -110,19 +110,17 @@ d3.csv('/resources/fraud_reports.csv').then(function (data1) {
 
             // Define the plot layout for the Bar Chart
             var layout1 = {
-                title: "Top 10 Fraud, Identity Theft & Other Report Categories per State in 2019",
+                title: "Top 10 Report Categories (Fraud, Identity Theft & Other) per State in 2019",
                 margin: {
                     t: 50,
                     b: 50,
                     l: 350,
-                    r: 50
-                    
+                    r: 50 
                 }
             };
        
             // Plot the chart to a div tag with id "bar"
             Plotly.newPlot("bar", data3, layout1);
-
         }
 
         // Call the buildList Function
@@ -146,6 +144,5 @@ d3.csv('/resources/fraud_reports.csv').then(function (data1) {
 
         // Call the init Function
         init();
-
     })
 })
