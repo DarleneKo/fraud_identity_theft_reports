@@ -13,18 +13,26 @@
 
   <div class="container">
     <div class="row">
-      <style>
-        .JumboHeaderImg {
-          background-image: url("credit_card_image");
-          background-size: cover;
-        }
-      </style>
-      <div class="col-md-12 jumbotron text-center">
-        <div class = "container JumboHeaderImg"></div>
+      <div class="col-md-12 jumbotron text-center" style="background-image: url(https://www.nextadvisor.com/wp-content/uploads/2019/01/GettyImages-155354133.jpg);
+            background-repeat: no-repeat; background-size: 20%; height: 100%; background-color: rgb(6, 0, 12); color: white">
         <h2>FTC Consumer Sentinel Network Dashboard</h2>
         <p>Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4>"The FTC takes in reports from consumers about problems they experience in the marketplace. The reports
+          are stored in the Consumer Sentinel Network (Sentinel), a secure online database available only to law
+          enforcement.  Since 1997, Sentinel has collected tens of millions of consumer reports about fraud, identity theft, and
+          other consumer protection topics. During 2019, Sentinel received over 3.2 million consumer reports, which
+          the FTC has sorted into 29 top categories."</h4>
+          <a href="https://www.ftc.gov/system/files/attachments/data-sets/consumer_sentinel_category_definitions_january_2020.pdf" 
+            target="_blank">See Descriptions for Each Category.</a>
+        <br>
+        <br>
+      </div>
+
     <div class="row">
       <div class="col-md-3">
         <div class="well">
@@ -44,6 +52,7 @@
         <div id="bar"></div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <div id="choropleth"></div>
@@ -53,8 +62,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/logic.js"></script>
+  <script src="../static/js/logic.js"></script>
 
 </body>
 
 </html>
+
