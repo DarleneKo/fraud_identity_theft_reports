@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+  <meta name="viewport" content="width=device-width"/>
+
+
   <title>FTC Consumer Sentinel Network</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -28,7 +34,7 @@
           other consumer protection topics. During 2019, Sentinel received over 3.2 million consumer reports, which
           the FTC has sorted into 29 top categories."</h4>
           <a href="https://www.ftc.gov/system/files/attachments/data-sets/consumer_sentinel_category_definitions_january_2020.pdf" 
-            target="_blank">See Descriptions for Each Category.</a>
+            target="_blank">Click here to see descriptions of each category.</a>
         <br>
         <br>
       </div>
@@ -58,11 +64,28 @@
         <div id="choropleth"></div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="chart"></div>
+      </div>
+    </div>
+
   </div>
 
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/js/logic.js"></script>
+
+  <script src="../static/billboard.js"></script>
+  <link rel="stylesheet" href="../static/css/billboard.css">
+  
+  <script src="../static/js/logic1.js"></script>
+  <script src="../static/js/logic2.js"></script>
+  <script src="../static/js/logic3.js"></script>
+  <script src="../static/js/logic(csv).js"></script>
 
 </body>
 
