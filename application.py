@@ -26,10 +26,16 @@ def top_ten_data():
     return jsonify(top_ten.to_dict('records'))
 
 
-@app.route("/api/v1.0/top_ten")
+@app.route("/api/v1.0/report_counts")
 def report_counts_data():
     report_counts = data.get_report_counts()
     return jsonify(report_counts.to_dict('records'))
+
+
+@app.route("/api/v1.0/state_rankings")
+def state_rankings_data():
+    state_rankings = data.get_state_rankings()
+    return jsonify(state_rankings.to_dict('records'))
 
 
 if __name__ == '__main__':

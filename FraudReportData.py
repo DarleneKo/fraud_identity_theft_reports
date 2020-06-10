@@ -18,7 +18,8 @@ class FraudReportData():
         self.Base.prepare(self.engine, reflect=True)
         self.fraud_reports = self.Base.classes['fraud_reports']
         self.top_ten = self.Base.classes['top_ten']
-        self.meta = MetaData()
+        self.report_counts = self.Base.classes['report_counts']
+        self.state_rankings = self.Base.classes['state_rankings']
 
 # inspect tables 
     def display_db_info(self):
@@ -55,9 +56,31 @@ class FraudReportData():
         return top_ten_df
 
 
+    def get_report_counts(self):
+        session = Session(self.engine)
+
+        results = session.query(self.report_counts)
+
+        report_counts_df = pd.read_sql(results.statement, session.connection())
+
+        session.close()
+        return report_counts_df
+
+
+    def get_state_rankings(self):
+        session = Session(self.engine)
+
+        results = session.query(self.state_rankings)
+
+        state_rankings_df = pd.read_sql(results.statement, session.connection())
+
+        session.close()
+        return state_rankings_df
 
 if __name__ == '__main__':
-    info = FraudReportData("sqlite:///fraud.db")
-    info.display_db_info()
-    print("\nFraud Report DF:\n", info.get_fraud_reports())
-    print("\nTop Ten DF:\n", info.get_top_ten())
+    info = FraudReportData("sqlite:///fraud_db.db")
+    # info.display_db_info()
+    # print("\nFraud Report DF:\n", info.get_fraud_reports())
+    # print("\nTop Ten DF:\n", info.get_top_ten())
+    # print("\nReport Counts DF:\n", info.get_report_counts())
+    print("\nState Rankings DF:\n", info.get_state_rankings())
