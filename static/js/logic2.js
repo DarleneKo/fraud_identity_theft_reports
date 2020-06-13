@@ -140,6 +140,7 @@ function buildMap() {
     div.innerHTML = labels.join("<br>");
     return div;
   };
+  legend.addTo(map);
 
   geojson = L.geoJson(statesData, {
     style: style,
