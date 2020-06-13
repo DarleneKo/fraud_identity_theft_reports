@@ -1,8 +1,8 @@
-// Fetch the CSV data and console log it for 1st CSV File
+// Fetch the data from flask route and console log it for 1st CSV File
 d3.json("/api/v1.0/fraud_reports").then(function (data1) {
     console.log("first csv", data1);
     
-    // Fetch the CSV data and console log it for 2nd CSV File
+    // Fetch the data from flask route and console log it for 2nd CSV File
     d3.json("/api/v1.0/top_ten").then(function (data2) {
         console.log("second csv", data2);
 

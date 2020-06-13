@@ -1,4 +1,4 @@
-// Fetch the CSV data and console log it for 3rd CSV File
+// Fetch the data from flask route and console log it for 3rd CSV File
 function charting(){
   var reportFinal = [];
   d3.json("/api/v1.0/report_counts").then(function (data3) {
@@ -29,6 +29,8 @@ function charting(){
   })
   return reportFinal
 }
+
+// Create a Function to Build the Line Chart using Billboard.js Library
 
 function init(){
   var reportF2 = charting();
