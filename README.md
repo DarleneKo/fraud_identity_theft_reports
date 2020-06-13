@@ -1,6 +1,6 @@
 # fraud_identity_theft_reports
 
-Our full-stacked web development team created an interactive website related to fraud, identity theft and other reports based on data researched from the Federal Trade Commission (FTC).  We utilized the following languages and libraries: Python Flask-powered RESTful API, HTML/CSS, JavaScript, SQLite, D3, Leaflet, Plotly and Billboard.js.
+Our full-stacked web development team (Ian Housman, TJ Jaramillo, and Darlene Ko) created an interactive website related to fraud, identity theft and other reports based on data researched from the Federal Trade Commission (FTC).  We utilized the following languages and libraries: Python Flask-powered RESTful API, HTML/CSS, JavaScript, SQLite, D3, Leaflet, Plotly and Billboard.js.
 
 Please click the link below to see our website hosted on Amazon Web Services (AWS).
 
