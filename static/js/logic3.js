@@ -21,9 +21,6 @@ function charting(){
       }
 
       console.log("firstcheck", reportFinal);
-
-      //reportF2 = reportFinal.slice();
-      //console.log("test1", reportF2);
       }
 
     buildChart(data3);
@@ -39,7 +36,7 @@ function init(){
   var reportYear = [];
   setTimeout(function(){
     reportYear.push("x");
-    reportCount.push("Number of Fraud & Other Reports");
+    reportCount.push("Number of Reports");
     for(var i=0; i<reportF2.length; i++) {
       console.log(reportF2[i])
        reportYear.push(reportF2[i].date + "-01-01")
@@ -67,8 +64,3 @@ function init(){
 }
 
 init()
-
-
-// ["x", "2001-01-01", "2002-01-01", "2003-01-01", "2004-01-01", "2005-01-01", "2006-01-01", "2007-01-01", "2008-01-01",
-//"2009-01-01", "2010-01-01", "2011-01-01", "2012-01-01", "2013-01-01", "2014-01-01", "2015-01-01", "2016-01-01",
-//"2017-01-01", "2018-01-01", "2019-01-01"],
