@@ -123,7 +123,7 @@ function buildMap() {
   legend.onAdd = function (map) {
     var div = L.DomUtil.create("div", "info legend"),
       grades = [0, 300, 400, 500, 600, 700, 800, 900],
-      labels = ["<strong> Reports per 100K </strong>"],
+      labels = ["<strong> Reports per 100K <br>Population</br> </strong>"],
       from,
       to;
 
