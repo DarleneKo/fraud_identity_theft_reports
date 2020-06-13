@@ -110,7 +110,7 @@ d3.json("/api/v1.0/fraud_reports").then(function (data1) {
 
             // Define the plot layout for the Bar Chart
             var layout1 = {
-                title: "Top 10 Report Categories (Fraud, Identity Theft & Other) per State in 2019",
+                title: "<b> Top 10 Report Categories (Fraud, Identity Theft & Other) per State in 2019 </b>",
                 margin: {
                     t: 50,
                     b: 50,
