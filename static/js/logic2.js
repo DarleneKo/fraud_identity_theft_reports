@@ -28,7 +28,7 @@ function buildMap() {
 
   info.update = function (props) {
     this._div.innerHTML =
-      "<h4>State Fraud Info</h4>" +
+      "<h4>State Fraud & Identity Theft Info</h4>" +
       (props
         ? "<b>" +
           props.name +
@@ -36,10 +36,13 @@ function buildMap() {
           "<b>Rank: </b>" +
           props.Rank +
           "<br />" +
+          "<b>Reports per 100K: </b>" +
+          props.RP100 +
+          "<br />" +
           "<b>Top Fraud Type: </b>" +
           props.Top +
           "</b><br />" +
-          "<b>Total Dollars Lost: </b>" +
+          "<b>Total Loss: </b>" +
           "$ " +
           props.total_loss
         : "Hover over a state");
@@ -51,19 +54,19 @@ function buildMap() {
 
   // get color depending on state rank
   function getColor(d) {
-    return d < 5
+    return d > 900
       ? "#800026"
-      : d < 10
+      : d > 800
       ? "#BD0026"
-      : d < 20
+      : d > 700
       ? "#E31A1C"
-      : d < 30
+      : d > 600
       ? "#FC4E2A"
-      : d < 35
+      : d > 500
       ? "#FD8D3C"
-      : d < 40
+      : d > 400
       ? "#FEB24C"
-      : d < 45
+      : d > 300
       ? "#FED976"
       : "#FFEDA0";
   }
@@ -75,7 +78,7 @@ function buildMap() {
       color: "white",
       dashArray: "3",
       fillOpacity: 0.7,
-      fillColor: getColor(feature.properties.Rank),
+      fillColor: getColor(feature.properties.RP100),
     };
   }
 
@@ -119,7 +122,7 @@ function buildMap() {
 
   legend.onAdd = function (map) {
     var div = L.DomUtil.create("div", "info legend"),
-      grades = [1, 5, 10, 15, 20, 30, 40, 45],
+      grades = [0, 300, 400, 500, 600, 700, 800, 900],
       labels = [],
       from,
       to;
@@ -133,7 +136,7 @@ function buildMap() {
           getColor(from + 1) +
           '"></i> ' +
           from +
-          (to ? "&ndash;" + to : "-50")
+          (to ? "&ndash;" + to : "+")
       );
     }
 
