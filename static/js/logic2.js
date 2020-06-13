@@ -52,7 +52,7 @@ function buildMap() {
 
   console.log("second layer", info);
 
-  // get color depending on state rank
+  // get color depending on reports per 100k population
   function getColor(d) {
     return d > 900
       ? "#800026"
@@ -81,7 +81,7 @@ function buildMap() {
       fillColor: getColor(feature.properties.RP100),
     };
   }
-
+  // Highlight state that is hovered over
   function highlightFeature(e) {
     var layer = e.target;
 
@@ -101,6 +101,7 @@ function buildMap() {
 
   var geojson;
 
+  //Set state back to normal when moved off of hover
   function resetHighlight(e) {
     geojson.resetStyle(e.target);
     info.update();
@@ -117,6 +118,8 @@ function buildMap() {
       click: zoomToFeature,
     });
   }
+
+  //Add legend on bottom left of map
 
   var legend = L.control({ position: "bottomright" });
 
