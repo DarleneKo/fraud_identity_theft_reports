@@ -1,3 +1,6 @@
+
+
+
 function buildMap() {
   var map = L.map("choropleth").setView([37.8, -96], 4);
 
@@ -44,7 +47,7 @@ function buildMap() {
           "</b><br />" +
           "<b>Total Loss: </b>" +
           "$ " +
-          props.total_loss
+          numberWithCommas(props.total_loss)
         : "Hover over a state");
   };
 
@@ -52,7 +55,7 @@ function buildMap() {
 
   console.log("second layer", info);
 
-  // get color depending on reports per 100k population
+  // get color depending on state rank
   function getColor(d) {
     return d > 900
       ? "#800026"
@@ -81,7 +84,7 @@ function buildMap() {
       fillColor: getColor(feature.properties.RP100),
     };
   }
-  // Highlight state that is hovered over
+
   function highlightFeature(e) {
     var layer = e.target;
 
@@ -101,7 +104,6 @@ function buildMap() {
 
   var geojson;
 
-  //Set state back to normal when moved off of hover
   function resetHighlight(e) {
     geojson.resetStyle(e.target);
     info.update();
@@ -119,14 +121,12 @@ function buildMap() {
     });
   }
 
-  //Add legend on bottom left of map
-
   var legend = L.control({ position: "bottomright" });
 
   legend.onAdd = function (map) {
     var div = L.DomUtil.create("div", "info legend"),
       grades = [0, 300, 400, 500, 600, 700, 800, 900],
-      labels = ["<strong> Reports per 100K <br>Population</br> </strong>"],
+      labels = [],
       from,
       to;
 
@@ -160,6 +160,3 @@ function buildMap() {
 
 buildMap();
 
-//window.onload(init);
-
-//document.addEventListener("load", init());

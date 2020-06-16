@@ -1,3 +1,9 @@
+// Function to format any number with commas (if applicable)
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+
 // Fetch the data from flask route and console log it for 1st CSV File
 d3.json("/api/v1.0/fraud_reports").then(function (data1) {
     console.log("first csv", data1);
@@ -41,14 +47,14 @@ d3.json("/api/v1.0/fraud_reports").then(function (data1) {
             totalLoss =  totalLoss ? totalLoss[0]: 0;
             medianLoss =  medianLoss ? medianLoss[0]: 0;
 
-            console.log("total reports", totalReports);
-            console.log("total loss", totalLoss);
-            console.log("median loss", medianLoss)
+            console.log("total reports", numberWithCommas(totalReports));
+            console.log("total loss", numberWithCommas(totalLoss));
+            console.log("median loss", numberWithCommas(medianLoss))
 
             fraudInfo = {
-                "Total Fraud Reports: " : totalReports,
-                "Total Loss: $" : totalLoss,
-                "Median Loss: $" : medianLoss
+                "Total Fraud Reports: " : numberWithCommas(totalReports),
+                "Total Loss: $" : numberWithCommas(totalLoss),
+                "Median Loss: $" : numberWithCommas(medianLoss)
             };
 
             // Select Information Panel to a div tag with id "facts" from HTML file to place data
